@@ -1,0 +1,452 @@
+.gameScreen {
+  display: grid;
+  gap: 1rem;
+  max-width: 100%;
+  width: min(100%, 1060px);
+}
+
+.gameHeader {
+  background: rgba(12, 28, 54, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  padding: 0.85rem;
+}
+
+.gameHeader h2 {
+  text-align: center;
+}
+
+.rewardBar {
+  align-items: center;
+  background: rgba(12, 28, 54, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto 1fr auto;
+  padding: 0.85rem 1rem;
+}
+
+.starReadout {
+  align-items: center;
+  display: flex;
+  gap: 0.55rem;
+}
+
+.cssStar {
+  background: #ffe27a;
+  clip-path: polygon(50% 0, 62% 34%, 98% 35%, 69% 56%, 79% 91%, 50% 70%, 21% 91%, 31% 56%, 2% 35%, 38% 34%);
+  display: block;
+  height: 34px;
+  width: 34px;
+}
+
+.badgeTrack {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  height: 16px;
+  overflow: hidden;
+}
+
+.badgeTrack span {
+  background: linear-gradient(90deg, #9ee8ff, #ffe27a);
+  display: block;
+  height: 100%;
+  transition: width 240ms ease;
+}
+
+.badgeMini {
+  background: rgba(255, 226, 122, 0.15);
+  border: 1px solid rgba(255, 226, 122, 0.42);
+  border-radius: 999px;
+  color: #fff5be;
+  font-weight: 900;
+  padding: 0.55rem 0.8rem;
+}
+
+.taskPanel {
+  align-items: center;
+  background: rgba(12, 28, 54, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 30px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  display: grid;
+  gap: 1.2rem;
+  justify-items: center;
+  min-height: 570px;
+  max-width: 100%;
+  padding: clamp(1.1rem, 4vw, 2.6rem);
+  text-align: center;
+}
+
+.taskInstruction {
+  font-size: clamp(1.45rem, 4vw, 2.35rem);
+  font-weight: 900;
+}
+
+.letterChoiceGrid,
+.pictureChoiceGrid,
+.memoryChoiceGrid {
+  display: grid;
+  gap: 1rem;
+  width: min(760px, 100%);
+  max-width: 100%;
+}
+
+.letterChoiceGrid {
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+}
+
+.letterChoiceGrid button {
+  background: #f7fbff;
+  color: #152033;
+  font-size: clamp(3rem, 10vw, 5.6rem);
+  min-height: 150px;
+}
+
+.pictureChoiceGrid {
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+}
+
+.pictureChoiceGrid button {
+  align-items: center;
+  background: #f7fbff;
+  color: #152033;
+  display: grid;
+  gap: 0.8rem;
+  justify-items: center;
+  min-height: 172px;
+  padding: 1rem;
+}
+
+.wordDisplay {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  color: #ffe27a;
+  font-size: clamp(2.1rem, 8vw, 4.4rem);
+  font-weight: 900;
+  padding: 0.55rem 1.3rem;
+}
+
+.pictureShape {
+  display: block;
+  height: 78px;
+  position: relative;
+  width: 94px;
+}
+
+.pictureShape.sun {
+  background: #ffe27a;
+  border-radius: 50%;
+  box-shadow: 0 0 0 13px rgba(255, 226, 122, 0.3);
+  height: 72px;
+  width: 72px;
+}
+
+.pictureShape.fish {
+  background: #54cce8;
+  border-radius: 50% 44% 44% 50%;
+  height: 48px;
+  margin-top: 16px;
+}
+
+.pictureShape.fish::after {
+  border-bottom: 24px solid transparent;
+  border-left: 34px solid #54cce8;
+  border-top: 24px solid transparent;
+  content: "";
+  position: absolute;
+  right: -24px;
+  top: 0;
+}
+
+.pictureShape.eye {
+  background: #ffffff;
+  border: 4px solid #152033;
+  border-radius: 70% 10% 70% 10%;
+  transform: rotate(45deg);
+}
+
+.pictureShape.eye::after {
+  background: #152033;
+  border-radius: 50%;
+  content: "";
+  height: 28px;
+  left: 28px;
+  position: absolute;
+  top: 22px;
+  width: 28px;
+}
+
+.pictureShape.cat,
+.pictureShape.dog {
+  background: #d7b18b;
+  border-radius: 50%;
+  height: 76px;
+  width: 76px;
+}
+
+.pictureShape.cat::before,
+.pictureShape.cat::after {
+  border-bottom: 30px solid #d7b18b;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  content: "";
+  position: absolute;
+  top: -15px;
+}
+
+.pictureShape.cat::before { left: 2px; transform: rotate(-24deg); }
+.pictureShape.cat::after { right: 2px; transform: rotate(24deg); }
+
+.pictureShape.dog::before,
+.pictureShape.dog::after {
+  background: #9b6d4a;
+  border-radius: 16px;
+  content: "";
+  height: 44px;
+  position: absolute;
+  top: 8px;
+  width: 20px;
+}
+
+.pictureShape.dog::before { left: -8px; }
+.pictureShape.dog::after { right: -8px; }
+
+.pictureShape.house {
+  background: #8dc8ff;
+  height: 52px;
+  margin-top: 22px;
+  width: 82px;
+}
+
+.pictureShape.house::before {
+  border-bottom: 42px solid #ffe27a;
+  border-left: 48px solid transparent;
+  border-right: 48px solid transparent;
+  content: "";
+  left: -7px;
+  position: absolute;
+  top: -38px;
+}
+
+.sequenceLine {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  min-height: 102px;
+}
+
+.selectedSequence {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  color: #ffe27a;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  font-weight: 900;
+  min-height: 58px;
+  padding: 0.7rem 1rem;
+  width: min(100%, 520px);
+}
+
+.listeningCard {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  min-height: 180px;
+  padding: 1.2rem;
+  width: min(100%, 520px);
+}
+
+.listeningPulse {
+  background: radial-gradient(circle, #ffe27a 0 28%, rgba(255, 226, 122, 0.24) 30% 62%, transparent 64%);
+  border-radius: 50%;
+  display: block;
+  height: 86px;
+  width: 86px;
+}
+
+.memoryChoiceGrid {
+  grid-template-columns: repeat(4, minmax(84px, 1fr));
+  justify-items: center;
+}
+
+.letterMemoryGrid {
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+}
+
+.memoryCard {
+  align-items: center;
+  border-radius: 24px;
+  color: #152033;
+  display: grid;
+  font-size: 2.1rem;
+  font-weight: 900;
+  height: 92px;
+  place-items: center;
+  width: 92px;
+}
+
+button.memoryCard {
+  padding: 0;
+}
+
+.sequenceLine .memoryCard {
+  opacity: 0.28;
+}
+
+.sequenceLine .glowCard {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.tileBlue { background: #77d8ff; }
+.tileGreen { background: #87e8a6; }
+.tileGold { background: #ffe27a; }
+.tilePink { background: #ff9dbf; }
+
+.focusPanel {
+  min-height: 610px;
+}
+
+.signalOrb {
+  border: 12px solid rgba(255, 255, 255, 0.76);
+  border-radius: 50%;
+  color: #fff;
+  display: grid;
+  font-size: clamp(2.6rem, 9vw, 5rem);
+  height: clamp(200px, 42vw, 320px);
+  place-items: center;
+  width: clamp(200px, 42vw, 320px);
+}
+
+.signalOrb.go {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.55), transparent 16%),
+    #1fae5b;
+  box-shadow: 0 0 70px rgba(73, 233, 133, 0.34);
+}
+
+.signalOrb.stop {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.42), transparent 16%),
+    #cf4545;
+}
+
+.focusMessage,
+.roundCount {
+  color: #dbeafe;
+  font-weight: 900;
+}
+
+.softTimer {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  height: 18px;
+  overflow: hidden;
+  width: min(420px, 100%);
+}
+
+.softTimer span {
+  background: linear-gradient(90deg, #87e8a6, #ffe27a);
+  display: block;
+  height: 100%;
+  transition: width 300ms ease;
+}
+
+.feedbackLayer {
+  background: rgba(2, 8, 20, 0.34);
+  display: grid;
+  inset: 0;
+  padding: 1rem;
+  place-items: center;
+  position: fixed;
+  z-index: 12;
+}
+
+.feedbackPanel {
+  background: #f7fbff;
+  border-radius: 28px;
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.38);
+  color: #152033;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  padding: 1.4rem;
+  text-align: center;
+  width: min(380px, 100%);
+}
+
+.feedbackPanel.correct {
+  border: 6px solid #ffe27a;
+}
+
+.feedbackPanel.retry {
+  border: 6px solid #9ee8ff;
+}
+
+.feedbackPanel p {
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+
+.feedbackIcon {
+  background: #ffe27a;
+  border-radius: 50%;
+  height: 54px;
+  width: 54px;
+}
+
+@media (max-width: 780px) {
+  .rewardBar,
+  .gameHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .letterChoiceGrid,
+  .pictureChoiceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rewardBar {
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .letterChoiceGrid,
+  .pictureChoiceGrid,
+  .memoryChoiceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .memoryCard {
+    width: min(140px, 100%);
+  }
+
+  .taskPanel {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .letterChoiceGrid button {
+    min-height: 112px;
+  }
+
+  .pictureChoiceGrid button {
+    min-height: 132px;
+  }
+
+  .pictureShape {
+    transform: scale(0.9);
+  }
+
+  .pictureShape.eye {
+    transform: rotate(45deg) scale(0.9);
+  }
+}
